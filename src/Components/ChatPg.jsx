@@ -3,14 +3,17 @@ import { IconContext } from "react-icons";
 import { PiSealQuestion } from "react-icons/pi";
 import { LuSendHorizonal } from "react-icons/lu";
 import { BsPersonCircle } from "react-icons/bs";
+import logo from "../logo.png";
 
 const ChatPg = () => {
   const [dept, setDept] = useState("marketing");
   return (
     <div className="h-screen">
-      <div className="h-[10%] bg-[#0095A9] flex flex-row justify-between items-center px-5 w-full">
-        <span className=" h-10 w-10 bg-slate-500" />
-        <div className="flex flex-row justify-center items-center gap-4">
+      <div className="h-[10%] flex flex-row justify-between items-center px-5 w-full bg-[#0095A9]">
+        <div className="bg-white border-[1px] border-black px-2 rounded ">
+          <img src={logo} alt="logo" style={{ height: "3rem" }} />
+        </div>
+        <div className="flex flex-row justify-center items-center gap-4 w-[30%]">
           <label className="bg-white px-3 py-2 rounded border-2 border-black">
             Department:
             <select
@@ -24,12 +27,12 @@ const ChatPg = () => {
               <option value="sales">Sales</option>
             </select>
           </label>
-          <span classname="flex flex-row justify-center items-center border-2 border-black">
+          <div classname="flex flex-row-reverse border-2 border-black gap-4">
             <IconContext.Provider value={{ color: "white", size: "18px" }}>
               <BsPersonCircle />
             </IconContext.Provider>
             <span className="text-white">Nithin</span>
-          </span>
+          </div>
         </div>
       </div>
       <div className="h-[90%] flex flex-row">
@@ -49,7 +52,7 @@ const ChatPg = () => {
             <input
               type="text"
               placeholder={`${
-                dept == "marketing"
+                dept === "marketing"
                   ? "Enter your marketing query here..."
                   : "Enter your sales query here..."
               }`}
@@ -66,3 +69,6 @@ const ChatPg = () => {
 };
 
 export default ChatPg;
+// nithin
+// new chat ?
+// login -> chat usecontext

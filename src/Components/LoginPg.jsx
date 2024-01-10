@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import logo from "../logo-white.png";
 
 const LoginPg = () => {
   const [email, setEmail] = useState("");
@@ -8,7 +9,7 @@ const LoginPg = () => {
   const checkLogin = () => {
     console.log(email);
     console.log(password);
-    if (email == "user123" && password == "pass123") {
+    if (email === "user123" && password === "pass123") {
       toast.success("Correct");
     } else {
       toast.error("Incorrect login information.");
@@ -16,8 +17,8 @@ const LoginPg = () => {
   };
   return (
     <div className="h-screen flex flex-col bg-[#323842]">
-      <div className="h-[10%] flex flex-row justify-start items-center">
-        <span className=" h-10 w-10 bg-slate-500 mx-5" />
+      <div className="h-[10%] flex flex-row justify-start items-center mx-4 my-4">
+        <img src={logo} alt="logo" style={{ height: "3rem" }} />
       </div>
       <div className="h-[85%] flex flex-row justify-center items-center">
         <div className="bg-black w-[38%] h-[80%] flex flex-col text-white justify-start items-center pt-8 gap-4">
@@ -69,5 +70,4 @@ const LoginPg = () => {
 };
 
 export default LoginPg;
-// logo
 // checkbox
