@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import logo from "../logo-white.png";
+import { useNavigate } from "react-router-dom";
 
 const LoginPg = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigate = useNavigate();
   const checkLogin = () => {
-    console.log(email);
-    console.log(password);
     if (email === "user123" && password === "pass123") {
       toast.success("Correct");
+      navigate("/chat");
     } else {
       toast.error("Incorrect login information.");
     }
